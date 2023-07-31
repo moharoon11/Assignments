@@ -1,0 +1,18 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Program6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String input = scanner.nextLine();
+        String sorted = sortStringAlphabetically(input);
+        System.out.println("Sorted string: " + sorted);
+    }
+
+    public static String sortStringAlphabetically(String input) {
+        char[] chars = input.toCharArray();
+        Arrays.sort(chars);
+        return new String(chars);
+    }
+}
