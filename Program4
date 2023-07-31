@@ -1,0 +1,23 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Program4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String input = scanner.nextLine();
+        boolean isPangram = checkPangram(input);
+        System.out.println("Is the string a pangram? " + isPangram);
+    }
+
+    public static boolean checkPangram(String input) {
+        Set<Character> uniqueChars = new HashSet<>();
+        for (char c : input.toLowerCase().toCharArray()) {
+            if (Character.isLetter(c)) {
+                uniqueChars.add(c);
+            }
+        }
+        return uniqueChars.size() == 26;
+    }
+}
